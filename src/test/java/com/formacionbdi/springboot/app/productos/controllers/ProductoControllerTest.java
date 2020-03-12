@@ -38,6 +38,7 @@ public class ProductoControllerTest {
 	@MockBean
 	IProductoService productoService;
 	
+	
 	@Autowired
 	MockMvc mockMvc;
 	
