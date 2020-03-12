@@ -70,12 +70,12 @@
 			<artifactId>mysql-connector-java</artifactId>
 			<scope>runtime</scope>
 		</dependency>	
-<dependency>
-    <groupId>org.junit.platform</groupId>
-    <artifactId>junit-platform-runner</artifactId>
-    <version>1.6.0</version>
-    <scope>test</scope>
-</dependency>
+		<dependency>
+		    <groupId>org.junit.platform</groupId>
+		    <artifactId>junit-platform-runner</artifactId>
+		    <version>1.6.0</version>
+		    <scope>test</scope>
+		</dependency>
 		
 	</dependencies>
 
@@ -85,6 +85,11 @@
 				<groupId>org.springframework.boot</groupId>
 				<artifactId>spring-boot-maven-plugin</artifactId>
 			</plugin>
+            <plugin>
+                <groupId>org.sonarsource.scanner.maven</groupId>
+                <artifactId>sonar-maven-plugin</artifactId>
+                <version>3.4.0.905</version>
+            </plugin>			
 		</plugins>
 	</build>
 
