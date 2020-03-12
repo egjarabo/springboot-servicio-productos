@@ -15,27 +15,30 @@ import java.util.List;
 import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+import org.junit.jupiter.api.extension.ExtendWith;
 import org.junit.platform.runner.JUnitPlatform;
 import org.junit.runner.RunWith;
+import org.mockito.InjectMocks;
+import org.mockito.Mock;
+import org.mockito.junit.jupiter.MockitoExtension;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
-import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.http.MediaType;
 import org.springframework.test.web.servlet.MockMvc;
+import org.springframework.test.web.servlet.setup.MockMvcBuilders;
 
 import com.formacionbdi.springboot.app.commons.models.entity.Producto;
 import com.formacionbdi.springboot.app.productos.models.service.IProductoService;
 
-//@ExtendWith(MockitoExtension.class)
-@WebMvcTest(ProductoController.class)
+@ExtendWith(MockitoExtension.class)
+//@WebMvcTest(ProductoController.class)
 @RunWith(JUnitPlatform.class)
 public class ProductoControllerTest {
 	
-//	@InjectMocks
-//	ProductoController controller;
+	@InjectMocks
+	ProductoController controller;
 	
-//	@Mock
-	@MockBean
+	@Mock
+//	@MockBean
 	IProductoService productoService;
 	
 	
@@ -45,7 +48,7 @@ public class ProductoControllerTest {
 	@BeforeEach
 	void setUp() {
 		System.out.println("Arrancando ... ");
-//		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
+		mockMvc = MockMvcBuilders.standaloneSetup(controller).build();
 	}
 		
 	@Test
